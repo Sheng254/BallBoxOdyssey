@@ -5,7 +5,7 @@
 Experience the comical adventure of BallBox Odyssey, a game where you take command of a ball inside a box. Harness your finger tapping prowess to guide the ball, utilising the mighty arrow keys as your ultimate weapon!
 
 ## Project Description
-- An exceedingly basic game developed by myself to gain insights into building a simple web app using frontend languages.It serves as a learning project that showcases the implementation of fundamental concepts in web development.
+- An exceedingly basic game developed by myself to gain insights into building a simple web app using frontend languages. It serves as a learning project that showcases the implementation of fundamental concepts in web development.
 - Developed using a combination of HTML, CSS, and JavaScript.
 - Consists of three different files:
   - index.html (Defines the structure and layout of the game)
