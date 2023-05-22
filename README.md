@@ -14,7 +14,8 @@ Experience the comical adventure of BallBox Odyssey, a game where you take comma
 - Deployed on the GitHub Pages platform for easy access.
 
 ## How to Play
-Navigate the ball within the box by using the arrow keys for movement.
+Navigate the ball within the box by using the arrow keys for movement. Note that this game is not playable on mobile devices.
+
 
 ## Accessing BallBox Odyssey
 To access BallBox Odyssey, simply visit the following website: https://sheng254.github.io/BallBoxOdyssey/
