@@ -1,4 +1,7 @@
 # BallBox Odyssey
+
+![Quantron](BallBoxOdyssey.png)
+
 Experience the comical adventure of BallBox Odyssey, a game where you take command of a ball inside a box. Harness your finger tapping prowess to guide the ball, utilising the mighty arrow keys as your ultimate weapon!
 
 ## Project Description
