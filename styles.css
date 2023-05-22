@@ -4,18 +4,24 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: lightblue; /* Updated background color */
-  font-family: Arial, sans-serif;
+  background-color: #ffeddf; /* Light peach background color */
+  background-image: linear-gradient(to bottom right, #ffeddf, #ffd2a5); /* Gradient from light peach to light orange */
+  font-family: "Microsoft YaHei", Arial, sans-serif; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 40px;
+  color: #d85c41; /* Dark orange text color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: "Microsoft YaHei", Arial Black, sans-serif; 
 }
 
 #box {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-color: lightgoldenrodyellow;
   position: relative;
 }
