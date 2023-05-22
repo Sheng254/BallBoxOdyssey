@@ -17,9 +17,9 @@ Experience the comical adventure of BallBox Odyssey, a game where you take comma
 Navigate the ball within the box by using the arrow keys for movement. Note that this game is not playable on mobile devices.
 
 ##  Potential Enhancements for the Future
-- **Adding black boxes representing mines and a food item as rewards.** The objective of the player would be to collect the food while avoiding the mines. 
-- **Implementing a life system.** Adding a life system would bring an extra layer of challenge and consequence to the game. The player could start with a certain number of lives, such as three, and each time they touch a mine, they would lose one life. If all lives are depleted, the game would end. 
-- **Introducing a level progression system.** Each level could introduce additional mines or increase the speed of the ball, challenging the player to improve their skills as they advance. 
+- **Adding black boxes representing mines and a food item as rewards.** The objective of game would be to collect the food while avoiding the mines. 
+- **Implementing a life system.** Players could start with a certain number of lives, such as three, and each time they touch a mine, they would lose one life. If all lives are depleted, the game would end. 
+- **Introducing a level progression system.** Each level could introduce additional mines or increase the speed of the ball, challenging players to improve their skills as they advance. 
 - **Enhancing visual elements.** Adding animations effects for actions like collecting food or colliding with mines would make the game more engaging and entertaining.
 - **Adapting the game for mobile devices.** Implementing touch controls or creating a mobile-friendly version would allow players to enjoy the game on their smartphones or tablets. 
 
