@@ -1,3 +1,4 @@
+/* General styles */
 .container {
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@
   font-family: "Microsoft YaHei", Arial Black, sans-serif; 
 }
 
+/* Game box styles */
 #box {
   width: 400px;
   height: 400px;
@@ -32,4 +34,51 @@
   background-color: red;
   border-radius: 50%;
   position: absolute;
+}
+
+/* Mine styles */
+.mine {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  /* Additional styles for visual effects */
+  border-radius: 0;
+  animation: mineAnimation 1s infinite alternate;
+}
+
+/* Food item styles */
+.food-item {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  position: absolute;
+  /* Additional styles for visual effects */
+  border-radius: 50%;
+  animation: foodAnimation 1s infinite alternate;
+}
+
+@keyframes mineAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes foodAnimation {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+#lives,
+
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #d85c41; /* Dark orange text color */
+  font-size: 20px;
 }
