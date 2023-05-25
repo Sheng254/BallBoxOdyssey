@@ -9,15 +9,21 @@ document.addEventListener("DOMContentLoaded", function() {
   let ballX, ballY;
   let lives = 3; // Initial number of lives
   let score = 0; // Initial score
+  let count = 0
   let foodItem;
 
   // Function to generate random coordinates within the box boundaries
   function generateRandomCoordinates() {
-    const x = Math.floor(Math.random() * (boxWidth - 20));
-    const y = Math.floor(Math.random() * (boxHeight - 20));
+    let x, y;
+    do {
+      x = Math.floor(Math.random() * (boxWidth - 20));
+      y = Math.floor(Math.random() * (boxHeight - 20));
+    } while (
+      Math.abs(x - ballX) <= ballWidth && Math.abs(y - ballY) <= ballHeight
+    ); // Exclude the ball's initial position
     return { x, y };
   }
-
+  
   // Function to create mines
   function generateMines() {
     for (let i = 0; i < 30; i++) {
@@ -93,7 +99,8 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < mines.length; i++) {
       if (isColliding(ball, mines[i])) {
         // Handle collision with mines (e.g., reduce life count)
-        messageDisplay.textContent = "Mine Collision! Watch Out!"; 
+        count++
+        messageDisplay.textContent = `Mine Collision! Watch Out! x${count}`; 
         lives--;
 
         if (lives === 0) {
@@ -117,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check for collision with food item
     if (isColliding(ball, foodItem)) {
       // Handle collision with food item (e.g., increase score)
-       messageDisplay.textContent = "Crunchy Goodness!";
+       messageDisplay.textContent = `Crunchy Goodness! x${score+1}`;
 
       // Remove the food item from the box
       box.removeChild(foodItem);
