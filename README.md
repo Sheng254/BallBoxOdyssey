@@ -1,6 +1,6 @@
 # BallBox Odyssey ⚽📦
 
-![BallBoxOdyssey@](BallBoxOdyssey.png)
+![BallBoxOdyssey](BallBoxOdyssey.png)
 
 Experience the comical adventure of BallBox Odyssey, a game where you take command of a ball inside a box. Harness your finger-tapping prowess to navigate the ball through perilous obstacles and collect delightful orange food items along the way. But beware! Mines are scattered throughout the box, ready to jeopardise your journey. Use the mighty arrow keys as your ultimate weapon to avoid collisions with the mines and guide the ball to victory!
 
