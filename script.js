@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const mines = document.getElementsByClassName("mine");
 
     // Check for collision with mines
-    let collisionDetected = false;
     for (let i = 0; i < mines.length; i++) {
       if (isColliding(ball, mines[i])) {
         // Handle collision with mines (e.g., reduce life count)
@@ -103,23 +102,24 @@ document.addEventListener("DOMContentLoaded", function() {
         messageDisplay.textContent = `Mine Collision! Watch Out! x${count}`; 
         lives--;
 
+        // Remove the food item from the box
+        box.removeChild(mines[i]);
+
+
+
         if (lives === 0) {
           livesCount.textContent = lives;
           // Game over logic here
           stopGame();
-          break; // Remove the line 'collisionDetected = true;'
+          break; 
         }
 
         // Update lives count
         livesCount.textContent = lives;
-        collisionDetected = true;
         break;
       }
     }
 
-    if (collisionDetected) {
-      return; // If collision detected, don't update ball position
-    }
 
     // Check for collision with food item
     if (isColliding(ball, foodItem)) {
