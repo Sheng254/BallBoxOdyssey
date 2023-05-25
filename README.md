@@ -15,10 +15,10 @@ Experience the comical adventure of BallBox Odyssey, a game where you take comma
 
 ## How to Play
 1. Navigate the ball within the box by using the arrow keys for movement
-2. Avoid collision with mines, as it will reduce your lives.
-3. Collect orange food items to increase your score.
-4. Once you collect a food item, the position of mines will be relocated within the box.
-5. The game ends when you lose all your lives.
+2. Avoid collision with mines, as it will reduce your lives
+3. Collect orange food items to increase your score
+4. Once you collect a food item, the position of mines will be relocated within the box
+5. The game ends when you lose all your lives
 
 Please note that this game is not playable on mobile devices.
 
