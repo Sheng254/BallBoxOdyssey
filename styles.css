@@ -73,7 +73,21 @@
 
 #lives {
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #d85c41; /* Dark orange text color */
   font-size: 20px;
+  margin-bottom: 5px;
+  color: #d85c41; /* Dark orange text color */
+}
+
+#score {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #03770d; /* Dark orange text color */
+}
+
+#message-display {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #d85c45; /* Dark orange text color */
 }
