@@ -2,11 +2,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const box = document.getElementById("box");
   const ball = document.getElementById("ball");
   const livesCount = document.getElementById("lives-count");
+  const scoreCount = document.getElementById("score-count");
   const messageDisplay = document.getElementById("message-display");
 
   let boxWidth, boxHeight, ballWidth, ballHeight;
   let ballX, ballY;
   let lives = 3; // Initial number of lives
+  let score = 0; // Initial score
   let foodItem;
 
   // Function to generate random coordinates within the box boundaries
@@ -40,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to stop the game and display game over message
   function stopGame() {
-    console.log("Game over!");
-    messageDisplay.textContent = "Game over!"; // Display a message
+    messageDisplay.textContent = "The Odyssey Ends Here, Try Again?"; // Display a message
     gameActive = false; // Stop the game and disable input
     document.removeEventListener("keydown", handleKeyDown); // Disable keydown event listener
   }
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < mines.length; i++) {
       if (isColliding(ball, mines[i])) {
         // Handle collision with mines (e.g., reduce life count)
-        console.log("Collision with a mine!");
+        messageDisplay.textContent = "Mine Collision! Watch Out!"; 
         lives--;
 
         if (lives === 0) {
@@ -116,13 +117,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check for collision with food item
     if (isColliding(ball, foodItem)) {
       // Handle collision with food item (e.g., increase score)
-      console.log("Collected a food item!");
+       messageDisplay.textContent = "Crunchy Goodness!";
 
       // Remove the food item from the box
       box.removeChild(foodItem);
 
       // Generate a new food item
       createFoodItem();
+
+      // Increase the score
+      score++;
+      scoreCount.textContent = score;
     }
   });
 
@@ -140,6 +145,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     lives = 3;
     livesCount.textContent = lives;
+
+    score = 0;
+    scoreCount.textContent = score;
 
     generateMines();
     createFoodItem();
