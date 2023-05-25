@@ -4,40 +4,23 @@ document.addEventListener("DOMContentLoaded", function() {
   const livesCount = document.getElementById("lives-count");
   const messageDisplay = document.getElementById("message-display");
 
-  const boxWidth = box.offsetWidth;
-  const boxHeight = box.offsetHeight;
-  const ballWidth = ball.offsetWidth;
-  const ballHeight = ball.offsetHeight;
-
-  let ballX = (boxWidth - ballWidth) / 2;
-  let ballY = (boxHeight - ballHeight) / 2;
-
-  ball.style.left = ballX + "px";
-  ball.style.top = ballY + "px";
-
+  let boxWidth, boxHeight, ballWidth, ballHeight;
+  let ballX, ballY;
   let lives = 3; // Initial number of lives
-  livesCount.textContent = lives;
+  let foodItem;
 
-  let gameActive = true; // Track game state
-
-  // Function to create a mine element
-  function createMine() {
-    const mine = document.createElement("div");
-    mine.className = "mine"; // Add the 'mine' class
-    return mine;
-  }
-
-  // Function to generate random coordinates
+  // Function to generate random coordinates within the box boundaries
   function generateRandomCoordinates() {
     const x = Math.floor(Math.random() * (boxWidth - 20));
     const y = Math.floor(Math.random() * (boxHeight - 20));
     return { x, y };
   }
 
-  // Function to generate mines
+  // Function to create mines
   function generateMines() {
     for (let i = 0; i < 30; i++) {
-      const mine = createMine();
+      const mine = document.createElement("div");
+      mine.className = "mine";
       const { x, y } = generateRandomCoordinates();
       mine.style.top = y + "px";
       mine.style.left = x + "px";
@@ -45,10 +28,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  generateMines();
-
-  let foodItem = createFoodItem();
-  box.appendChild(foodItem);
+  // Function to create a food item element
+  function createFoodItem() {
+    foodItem = document.createElement("div");
+    foodItem.className = "food-item";
+    const { x, y } = generateRandomCoordinates();
+    foodItem.style.top = y + "px";
+    foodItem.style.left = x + "px";
+    box.appendChild(foodItem);
+  }
 
   // Function to stop the game and display game over message
   function stopGame() {
@@ -56,6 +44,19 @@ document.addEventListener("DOMContentLoaded", function() {
     messageDisplay.textContent = "Game over!"; // Display a message
     gameActive = false; // Stop the game and disable input
     document.removeEventListener("keydown", handleKeyDown); // Disable keydown event listener
+  }
+
+  // Function to check collision between two elements
+  function isColliding(element1, element2) {
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+
+    return (
+      rect1.left < rect2.right &&
+      rect1.right > rect2.left &&
+      rect1.top < rect2.bottom &&
+      rect1.bottom > rect2.top
+    );
   }
 
   document.addEventListener("keydown", function(event) {
@@ -121,28 +122,28 @@ document.addEventListener("DOMContentLoaded", function() {
       box.removeChild(foodItem);
 
       // Generate a new food item
-      foodItem = createFoodItem();
-      box.appendChild(foodItem);
+      createFoodItem();
     }
   });
 
-  // Function to create a food item element
-  function createFoodItem() {
-    const foodItem = document.createElement("div");
-    foodItem.className = "food-item";
-    return foodItem;
+  // Initialize the game
+  function initializeGame() {
+    boxWidth = box.offsetWidth;
+    boxHeight = box.offsetHeight;
+    ballWidth = ball.offsetWidth;
+    ballHeight = ball.offsetHeight;
+    ballX = (boxWidth - ballWidth) / 2;
+    ballY = (boxHeight - ballHeight) / 2;
+
+    ball.style.left = ballX + "px";
+    ball.style.top = ballY + "px";
+
+    lives = 3;
+    livesCount.textContent = lives;
+
+    generateMines();
+    createFoodItem();
   }
 
-  // Function to check collision between two elements
-  function isColliding(element1, element2) {
-    const rect1 = element1.getBoundingClientRect();
-    const rect2 = element2.getBoundingClientRect();
-
-    return (
-      rect1.left < rect2.right &&
-      rect1.right > rect2.left &&
-      rect1.top < rect2.bottom &&
-      rect1.bottom > rect2.top
-    );
-  }
+  initializeGame();
 });
