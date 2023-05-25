@@ -24,8 +24,15 @@ document.addEventListener("DOMContentLoaded", function() {
     return { x, y };
   }
   
-  // Function to create mines
+  // Function to generate mines
   function generateMines() {
+    // Clear existing mines
+    const existingMines = document.querySelectorAll(".mine");
+    existingMines.forEach((mine) => {
+      box.removeChild(mine);
+    });
+
+    // Generate new mines
     for (let i = 0; i < 30; i++) {
       const mine = document.createElement("div");
       mine.className = "mine";
@@ -135,6 +142,9 @@ document.addEventListener("DOMContentLoaded", function() {
       // Increase the score
       score++;
       scoreCount.textContent = score;
+      
+      // Regenerate mines
+      generateMines();
     }
   });
 
