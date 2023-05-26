@@ -187,6 +187,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     score = 0;
     scoreCount.textContent = score;
+    
+    count= 0;
 
     generateMines();
     createFoodItem();
