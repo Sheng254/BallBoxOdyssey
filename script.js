@@ -4,13 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
   const livesCount = document.getElementById("lives-count");
   const scoreCount = document.getElementById("score-count");
   const messageDisplay = document.getElementById("message-display");
+  const resetButton = document.getElementById("reset-button");
 
   let boxWidth, boxHeight, ballWidth, ballHeight;
   let ballX, ballY;
   let lives = 3; // Initial number of lives
   let score = 0; // Initial score
-  let count = 0
+  let count = 0;
   let foodItem;
+  let gameActive = true;
 
   // Function to generate random coordinates within the box boundaries
   function generateRandomCoordinates() {
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ); // Exclude the ball's initial position
     return { x, y };
   }
-  
+
   // Function to generate mines
   function generateMines() {
     // Clear existing mines
@@ -73,17 +75,19 @@ document.addEventListener("DOMContentLoaded", function() {
     );
   }
 
-  document.addEventListener("keydown", function(event) {
-    if (lives <= 0) {
-      return; // Ignore key input when lives are <= 0
+  // Handle keydown event
+  function handleKeyDown(event) {
+    if (lives <= 0 || !gameActive) {
+      return; // Ignore key input when lives are <= 0 or game is not active
     }
-    const key = event.key;
 
+    const key = event.key;
     const stepSize = 10;
 
     if (key === "ArrowUp" && ballY > 0 && ballY - stepSize >= 0 && ballX >= 0) {
       ballY = Math.max(0, ballY - stepSize);
       ball.style.top = ballY + "px";
+
     } else if (key === "ArrowDown" && ballY < boxHeight - ballHeight) {
       ballY = Math.min(boxHeight - ballHeight, ballY + stepSize);
       ball.style.top = ballY + "px";
@@ -109,16 +113,14 @@ document.addEventListener("DOMContentLoaded", function() {
         messageDisplay.textContent = `Mine Collision! Watch Out! x${count}`; 
         lives--;
 
-        // Remove the food item from the box
+        // Remove the mine from the box
         box.removeChild(mines[i]);
-
-
 
         if (lives === 0) {
           livesCount.textContent = lives;
           // Game over logic here
           stopGame();
-          break; 
+          break;
         }
 
         // Update lives count
@@ -127,11 +129,10 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
 
-
     // Check for collision with food item
     if (isColliding(ball, foodItem)) {
       // Handle collision with food item (e.g., increase score)
-       messageDisplay.textContent = `Crunchy Goodness! x${score+1}`;
+      messageDisplay.textContent = `Crunchy Goodness! x${score + 1}`;
 
       // Remove the food item from the box
       box.removeChild(foodItem);
@@ -142,11 +143,32 @@ document.addEventListener("DOMContentLoaded", function() {
       // Increase the score
       score++;
       scoreCount.textContent = score;
-      
+
       // Regenerate mines
       generateMines();
     }
-  });
+  }
+
+  // Reset the game
+  function resetGame() {
+    // Clear the message display
+    messageDisplay.textContent = "";
+
+    // Remove the existing food item and mines
+    if (foodItem) {
+      box.removeChild(foodItem);
+    }
+    const existingMines = document.querySelectorAll(".mine");
+    existingMines.forEach((mine) => {
+      box.removeChild(mine);
+    });
+
+    // Reinitialize the game
+    initializeGame();
+  }
+
+  // Add event listener to the reset button
+  resetButton.addEventListener("click", resetGame);
 
   // Initialize the game
   function initializeGame() {
@@ -168,6 +190,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     generateMines();
     createFoodItem();
+
+    // Enable keydown event listener
+    document.addEventListener("keydown", handleKeyDown);
+    gameActive = true;
   }
 
   initializeGame();
