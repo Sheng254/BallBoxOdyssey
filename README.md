@@ -22,13 +22,13 @@ Experience the comical adventure of BallBox Odyssey, a game where you take comma
 
 Please note that this game is not playable on mobile devices.
 
+## Accessing BallBox Odyssey
+To access BallBox Odyssey, simply visit the following website: https://sheng254.github.io/BallBoxOdyssey/
+
 ##  Potential Enhancements for the Future
 - **Introducing a level progression system.** Each level could introduce additional mines or increase the speed of the ball, challenging players to improve their skills as they advance. 
 - **Enhancing visual elements.** Adding animations effects for actions like collecting food or colliding with mines would make the game more engaging and entertaining.
 - **Adapting the game for mobile devices.** Implementing touch controls or creating a mobile-friendly version would allow players to enjoy the game on their smartphones or tablets. 
-
-## Accessing BallBox Odyssey
-To access BallBox Odyssey, simply visit the following website: https://sheng254.github.io/BallBoxOdyssey/
 
 ## Contributing
 Contributions are welcome! Feel free to reach out with your suggestions, bug reports, or enhancement requests.
