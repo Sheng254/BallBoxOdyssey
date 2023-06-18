@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to stop the game and display game over message
   function stopGame() {
-    messageDisplay.textContent = "The Odyssey Ends Here, Try Again?"; // Display a message
+    messageDisplay.textContent = "💀 The Odyssey Ends Here, Try Again?"; // Display a message
     gameActive = false; // Stop the game and disable input
     document.removeEventListener("keydown", handleKeyDown); // Disable keydown event listener
   }
