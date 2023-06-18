@@ -12,7 +12,7 @@
   text-align: center;
   margin-bottom: 20px;
   font-size: 40px;
-  color: #d85c41; /* Dark orange text color */
+  color: #d85c41; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-family: "Microsoft YaHei", Arial Black, sans-serif; 
 }
@@ -22,6 +22,9 @@
   height: 400px;
   background-color: lightgoldenrodyellow;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px; 
+  overflow: hidden; 
 }
 
 #ball {
@@ -30,16 +33,20 @@
   background-color: red;
   border-radius: 50%;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .mine {
   width: 20px;
   height: 20px;
-  background-color: black;
+  background-color: #333;
   position: absolute;
-  /* Additional styles for visual effects */
   border-radius: 0;
   animation: mineAnimation 1s infinite alternate;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Food item styles */
@@ -48,9 +55,9 @@
   height: 20px;
   background-color: orange;
   position: absolute;
-  /* Additional styles for visual effects */
   border-radius: 50%;
   animation: foodAnimation 1s infinite alternate;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes mineAnimation {
@@ -75,21 +82,24 @@
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 5px;
-  color: #d85c41; /* Dark orange text color */
+  color: #d85c41; 
+  font-family: "Arial", sans-serif;
 }
 
 #score {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 5px;
-  color: #03770d; /* Dark orange text color */
+  color: #03770d; 
+  font-family: "Arial", sans-serif;
 }
 
 #message-display {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 5px;
-  color: #d85c45; /* Dark orange text color */
+  color: #d85c45; 
+  font-family: "Arial", sans-serif;
 }
 
 #reset-button {
@@ -98,6 +108,17 @@
   padding: 10px 20px;
   font-size: 16px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+  background-color: #45A041;
+}
+
+#reset-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
 }
