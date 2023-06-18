@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (isColliding(ball, mines[i])) {
         // Handle collision with mines (e.g., reduce life count)
         count++
-        messageDisplay.textContent = `Mine Collision! Watch Out! x${count}`; 
+        messageDisplay.textContent = `💣 Mine Collision! Watch Out! x${count}`; 
         lives--;
 
         // Remove the mine from the box
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check for collision with food item
     if (isColliding(ball, foodItem)) {
       // Handle collision with food item (e.g., increase score)
-      messageDisplay.textContent = `Crunchy Goodness! x${score + 1}`;
+      messageDisplay.textContent = `😇 Crunchy Goodness! x${score + 1}`;
 
       // Remove the food item from the box
       box.removeChild(foodItem);
