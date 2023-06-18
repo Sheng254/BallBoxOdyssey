@@ -33,20 +33,15 @@
   background-color: red;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .mine {
   width: 20px;
   height: 20px;
-  background-color: #333;
+  background-color: black;
   position: absolute;
   border-radius: 0;
   animation: mineAnimation 1s infinite alternate;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Food item styles */
@@ -57,7 +52,6 @@
   position: absolute;
   border-radius: 50%;
   animation: foodAnimation 1s infinite alternate;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes mineAnimation {
@@ -71,10 +65,10 @@
 
 @keyframes foodAnimation {
   from {
-    transform: rotate(0deg) scale(1);
+    transform: scale(1);
   }
   to {
-    transform: rotate(360deg) scale(1.2);
+    transform: scale(1.2);
   }
 }
 
