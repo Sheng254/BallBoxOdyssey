@@ -4,26 +4,25 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffeddf;
-  background-image: linear-gradient(to bottom right, #ffeddf, #ffd2a5);
-  font-family: "Roboto", Arial, sans-serif; 
+  background-color: #ffdab9; 
+  background-image: linear-gradient(to bottom right, #ffdab9, #ffa500, #ffff00); 
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .title {
   text-align: center;
   margin-bottom: 20px;
   font-size: 48px;
-  color: #e84a31; 
+  color: #333333; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-
 
 #box {
   width: 400px;
   height: 400px;
   background-color: lightgoldenrodyellow;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
   border-radius: 10px; 
   overflow: hidden; 
 }
@@ -32,6 +31,7 @@
   width: 30px;
   height: 30px;
   background-color: red;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   border-radius: 50%;
   position: absolute;
 }
@@ -41,18 +41,9 @@
   height: 20px;
   background-color: black;
   position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   border-radius: 0;
   animation: mineAnimation 1s infinite alternate;
-}
-
-/* Food item styles */
-.food-item {
-  width: 20px;
-  height: 20px;
-  background-color: rgb(255, 136, 0);
-  position: absolute;
-  border-radius: 50%;
-  animation: foodAnimation 1s infinite alternate;
 }
 
 @keyframes mineAnimation {
@@ -64,13 +55,13 @@
   }
 }
 
-@keyframes foodAnimation {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
-  }
+.food-item {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 136, 0);
+  position: absolute;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 50%;
 }
 
 #lives,
@@ -79,6 +70,7 @@
   font-weight: bold;
   font-size: 20px;
   margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #lives {
@@ -98,11 +90,12 @@
   color: white;
   padding: 10px 20px;
   font-size: 20px;
-  border: none;
+  border: 2px solid #00ff08; 
   border-radius: 4px;
   cursor: pointer;
   margin-top: 20px;
   transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #reset-button:hover {
