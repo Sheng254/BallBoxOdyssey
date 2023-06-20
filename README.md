@@ -2,7 +2,7 @@
 
 ![BallBoxOdyssey](BallBoxOdyssey.png)
 
-Experience the comical adventure of BallBox Odyssey, a game where you take command of a ball inside a box. Harness your finger-tapping prowess to navigate the ball through perilous obstacles and collect delightful orange food items along the way. But beware! Mines are scattered throughout the box, ready to jeopardise your journey. Use the mighty arrow keys as your ultimate weapon to avoid collisions with the mines and guide the ball to victory!
+Embark on a comical adventure in BallBox Odyssey! Command the ball inside a box, collecting delightful orange food items using arrow keys to accumulate points. But beware! Scattered mines pose a constant threat, adding an element of danger to your odyssey.
 
 ## Project Description
 - An basic game developed by myself to gain insights into building a simple web app using frontend languages. It serves as a learning project that showcases the implementation of fundamental concepts in web development
@@ -27,7 +27,7 @@ To access BallBox Odyssey, simply visit the following website: https://sheng254.
 
 ##  Potential Enhancements for the Future
 - **Introducing a level progression system.** Each level could introduce additional mines or increase the speed of the ball, challenging players to improve their skills as they advance. 
-- **Enhancing visual elements.** Adding animations effects for actions like collecting food or colliding with mines would make the game more engaging and entertaining.
+- **Enhancing visual elements.** Adding animation effects for actions like collecting food or colliding with mines would make the game more engaging and entertaining.
 - **Adapting the game for mobile devices.** Implementing touch controls or creating a mobile-friendly version would allow players to enjoy the game on their smartphones or tablets. 
 
 ## Contributing
